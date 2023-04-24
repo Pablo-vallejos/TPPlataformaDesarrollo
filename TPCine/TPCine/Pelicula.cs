@@ -16,5 +16,25 @@ namespace TPCine
         public List<Funcion> MisFunciones { get; set; }
         public int Duracion { get; set; }
 
+
+        //constuctor
+        public Pelicula(int ID, string Nombre, string Sinopsis, string Poster, int duracion)
+        {
+            this.ID = ID;
+            this.Nombre = Nombre;
+            this.Sinopsis = Sinopsis;
+            this.Poster = Poster;
+            this.Duracion = duracion;  
+            MisFunciones = new List<Funcion>();
+        }
+
+        public void AgregarFuncion (Funcion funcion) {
+            MisFunciones.Add(funcion);
+        }
+
+        public void eliminarFuncion(Funcion funcion)
+        {
+            MisFunciones.Remove(funcion);
+        }
     }
 }

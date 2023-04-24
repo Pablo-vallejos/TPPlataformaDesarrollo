@@ -21,5 +21,29 @@ namespace TPCine
         public DateTime FechaNacimiento { get; set; }
         public bool EsAdmin { get; set; }
 
+        //constructor
+        public Usuario(int ID, int DNI, string Nombre, string Apellido, string Mail, string Password, int IntentosFallidos, 
+            bool Bloqueado, Double Credito, DateTime FechaNacimiento, bool EsAdmin) { 
+            this.ID = ID;
+            this.DNI = DNI;
+            this.Nombre = Nombre;
+            this.Apellido = Apellido;
+            this.Mail = Mail;
+            this.Password = Password;
+            this.IntentosFallidos = IntentosFallidos;
+            this.Bloqueado  = Bloqueado;
+            this.Credito = Credito;
+            this.FechaNacimiento = FechaNacimiento;
+            this.EsAdmin = EsAdmin;
+            MisFunciones = new List<Funcion>();
+        }
+
+        public void AgregarFuncion(Funcion funcion) {
+            MisFunciones.Add(funcion);
+        }
+
+        public void EliminarFuncion(Funcion funcion) {
+            MisFunciones.Remove(funcion);
+        }
     }
 }

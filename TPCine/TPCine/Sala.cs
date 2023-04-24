@@ -12,6 +12,26 @@ namespace TPCine
         public string Ubicacion { get; set; }
         public int Capacidad { get; set; }
         public List<Funcion> MisFunciones { get; set; }
-        
+
+        //CONSTRUCTOR
+
+        public Sala(int ID, string Ubicacion, int Capacidad)
+        {
+            this.ID = ID;
+            this.Ubicacion = Ubicacion;
+            this.Capacidad = Capacidad;
+            MisFunciones = new List<Funcion>();
+        }
+
+        public void AgregarFuncion(Funcion funcion) {
+            MisFunciones.Add(funcion);
+        }
+
+        public void EliminarFuncion(Funcion funcion)
+        {
+            MisFunciones.Remove(funcion);
+        }
+
     }
+
 }
